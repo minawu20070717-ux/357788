@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水底世界生態聚落 - 作品展</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 p5.js 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <!-- 引入我們的水底世界背景程式碼 -->
+    <script src="sketch.js"></script>
+</head>
+<body>
+    <!-- p5.js 會將 Canvas 放置在這個容器中作為背景 -->
+    <div id="canvas-container"></div>
+
+    <main>
+        <header>
+            <h1>水底生態聚落展覽</h1>
+        </header>
+        <nav>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/022401/')">第一週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0303/')">第二週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0310/')">第三週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0311/')">第四週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0317/')">第五週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0409/')">第六週生態作品</button>
+            <button onclick="changeIframe('https://minawu20070717-ux.github.io/0422/')">第七週生態作品</button>
+            <!-- 新增全螢幕切換按鈕 -->
+            <button onclick="toggleFullScreen()" style="font-weight: bold; color: #005a82;">⛶ 切換全螢幕</button>
+        </nav>
+        <div class="display-area">
+            <iframe id="content-frame" src="https://minawu20070717-ux.github.io/0409/" title="作品展示區"></iframe>
+        </div>
+    </main>
+
+    <script>
+        // 此函式負責將 iframe 的內容切換至指定網址
+        function changeIframe(url) {
+            document.getElementById('content-frame').src = url;
+        }
+
+        // 切換全螢幕功能的函式
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                // 讓整個網頁元素進入全螢幕
+                document.documentElement.requestFullscreen();
+            } else {
+                // 退出全螢幕
+                document.exitFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
